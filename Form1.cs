@@ -15,6 +15,9 @@ namespace wGestionReservasHotel
         public Form1()
         {
             InitializeComponent();
+            cbTipoHabitacion.Items.Add("Estandar");
+            cbTipoHabitacion.Items.Add("VIP");
+            cbTipoHabitacion.SelectedIndex = 0;
         }
 
         private void label3_Click(object sender, EventArgs e)
