@@ -38,7 +38,7 @@
             this.txtNumeroHabitacion = new System.Windows.Forms.TextBox();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDuracion = new System.Windows.Forms.TextBox();
             this.txtTarifa = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvReservas = new System.Windows.Forms.DataGridView();
@@ -139,12 +139,12 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Duración de estadia";
             // 
-            // textBox1
+            // txtDuracion
             // 
-            this.textBox1.Location = new System.Drawing.Point(215, 286);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtDuracion.Location = new System.Drawing.Point(215, 286);
+            this.txtDuracion.Name = "txtDuracion";
+            this.txtDuracion.Size = new System.Drawing.Size(250, 20);
+            this.txtDuracion.TabIndex = 10;
             // 
             // txtTarifa
             // 
@@ -180,6 +180,7 @@
             this.btnAgregar.TabIndex = 14;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnListar
             // 
@@ -224,7 +225,7 @@
             this.Controls.Add(this.dgvReservas);
             this.Controls.Add(this.txtTarifa);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDuracion);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.txtNumeroHabitacion);
@@ -256,7 +257,7 @@
         private System.Windows.Forms.TextBox txtNumeroHabitacion;
         private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDuracion;
         private System.Windows.Forms.TextBox txtTarifa;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvReservas;
