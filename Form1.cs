@@ -102,5 +102,9 @@ namespace wGestionReservasHotel
             dgvReservas.DataSource = null;
             dgvReservas.DataSource = GestorReservas.Instancia.ObtenerReservas();
         }
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            ActualizarGrid();
+        }
     }
 }
