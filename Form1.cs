@@ -44,5 +44,36 @@ namespace wGestionReservasHotel
             }
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvReservas.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione una reserva para editar.");
+                return;
+            }
+
+            try
+            {
+                int filaSeleccionada = dgvReservas.SelectedRows[0].Index;
+                string tipo = cbTipoHabitacion.SelectedItem.ToString();
+                string nombre = txtNombreCliente.Text;
+                int numHabitacion = int.Parse(txtNumeroHabitacion.Text);
+                DateTime fecha = dtpFechaReserva.Value;
+                int duracion = int.Parse(txtDuracion.Text);
+                decimal tarifa = decimal.Parse(txtTarifa.Text);
+
+               
+                GestorReservas.Instancia.EliminarReserva(numHabitacion, fecha);
+                Reserva reservaEditada = CreadorReservas.CrearReserva(tipo, nombre, numHabitacion, fecha, duracion, tarifa);
+                GestorReservas.Instancia.AgregarReserva(reservaEditada);
+
+                MessageBox.Show("Reserva editada con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
     }
 }
