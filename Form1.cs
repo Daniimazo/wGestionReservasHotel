@@ -75,5 +75,27 @@ namespace wGestionReservasHotel
             }
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvReservas.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione una reserva para eliminar.");
+                return;
+            }
+
+            try
+            {
+                int numHabitacion = int.Parse(dgvReservas.SelectedRows[0].Cells["NumeroHabitacion"].Value.ToString());
+                DateTime fecha = DateTime.Parse(dgvReservas.SelectedRows[0].Cells["FechaReserva"].Value.ToString());
+
+                GestorReservas.Instancia.EliminarReserva(numHabitacion, fecha);
+                MessageBox.Show("Reserva eliminada correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
     }
 }
