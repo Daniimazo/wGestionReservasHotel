@@ -45,7 +45,7 @@ namespace wGestionReservasHotel
             if (reserva != null)
                 reservas.Remove(reserva);
             else
-                throw new KeyNotFoundException("Reserva no encontrada.");
+                throw new KeyNotFoundException("Reserva no encontrada."); 
         }
     }
 
